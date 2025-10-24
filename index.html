@@ -15,7 +15,7 @@
 </style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YYC Sales Shop</title>
+<title>NorthSalezz</title>
 <style>
 @font-face {
   font-family: 'Dogica';
@@ -35,6 +35,8 @@ body {
   background-color: #fff;
   border-bottom: 1px solid #000;
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
   justify-content: space-between;
   align-items: center;
   padding: 12px 24px;
@@ -53,11 +55,6 @@ body {
 section { padding: 24px; display: none; }
 section.active { display: block; }
 h2 { text-align: center; font-size: 24px; margin: 16px 0; font-weight: bold; line-height:1.25; }
-#landing-section { display: flex; width: 100%; margin-bottom: 24px; height: 200px; border-bottom:3px solid #000; }
-#landing-section img { width:100%; height:100%; object-fit: contain; }
-#landing-right { width:75%; padding:12px; display:flex; flex-direction:column; justify-content:center; }
-#landing-title { height:25%; display:flex; align-items:center; justify-content:center; font-size:28px; font-weight:bold; text-align:center; }
-#landing-description { height:75%; display:flex; align-items:flex-start; padding-top:8px; font-size:16px; line-height:1.25; }
 
 #sale { width:100%; display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:3px; border-top:3px solid #000; border-left:3px solid #000; }
 .product { border-right:3px solid #000; border-bottom:3px solid #000; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; text-align:center; overflow:hidden; cursor:pointer; transition: transform 0.1s; }
@@ -70,9 +67,9 @@ h2 { text-align: center; font-size: 24px; margin: 16px 0; font-weight: bold; lin
 .new-price { color:red; font-weight:700; }
 
 #category-buttons { display:grid; grid-template-columns:1fr; gap:8px; margin-top:12px; }
-.category-btn { padding:10px; border:2px solid #000; background-color:#fff; cursor:pointer; text-align:center; font-weight:bold; }
+.category-btn { letter-spacing:5px; padding:10px; border:2px solid #000; background-color:#fff; cursor:pointer; text-align:center; font-weight:bold; }
 .category-btn:hover { background-color:#f2f2f2; }
-.category-header { text-align:center; font-size:24px; margin-bottom:16px; font-weight:bold; line-height:1.25; }
+.category-header { text-align:center; font-size:24px; margin-bottom:16px; font-weight:bold; line-height:1.25; letter-spacing:5px;}
 .category-grid { width:100%; display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:3px; border-top:3px solid #000; border-left:3px solid #000; }
 
 #product-page h1 { text-align:center; font-size:28px; margin-top:10px; line-height:1.25; }
@@ -81,32 +78,111 @@ h2 { text-align: center; font-size: 24px; margin: 16px 0; font-weight: bold; lin
 #product-code { font-family: Arial, sans-serif; font-size:40px; font-weight:bold; text-align:center; margin:10px 0; }
 #how-to-order { text-align:center; font-size:14px; color:#0000ee; text-decoration:underline; cursor:pointer; }
 #back-btn { display:block; margin:20px auto; border:2px solid #000; background-color:#fff; padding:10px 16px; cursor:pointer; font-weight:bold; }
+
+#landing-column {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  height: auto;
+  margin-bottom: 5px;
+  min-margin-bottom: 5px;
+  min-padding: 5px;
+  padding: 5px;
+  border-bottom: 3px solid #000;
+  padding-bottom: 10px;
+}
+
+#landing-section {
+  width: 100%;
+  display: flex;
+  max-width: 1200px;
+  height: 400px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 150px;
+  margin-bottom: 1;
+}
+
+#landing-text {
+  flex: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-wrap: pretty;
+  overflow: hidden;
+}
+
+#landing-title {
+  font-size: clamp(14px, 36px, 40px);
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  word-wrap: break-word;
+}
+
+#landing-description {
+  margin-top: 1px;
+  font-size: clamp(14px, 18px, 20px);
+  line-height: 1.25em;
+  word-wrap: break-word;
+  margin-bottom: 5px;
+}
+
+#landing-img-container {
+  flex: 0 0 auto;
+  height: 75%;
+  max-width: 35%;
+  width: 35%;
+  min-width: 35%;
+  overflow: hidden;
+  margin-bottom: 5px;
+  justify-content: center;
+  object-fit: contain;
+}
+
+#landing-img-container img {
+  height: 100%;
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
 </style>
 </head>
 <body>
-<div class="navbar">
-  <div class="nav-left">
-    <a data-page="main">HOME</a>
-    <a href="#sale-section">SALE</a>
-    <a href="#categories-section">CATEGORIES</a>
-    <a data-page="services">SERVICES</a>
-    <a href="search.html">SEARCH</a>
-  </div>
+  <div class="navbar">
+     <div class="nav-left">
+       <a data-page="main">HOME</a>
+       <a href="#sale-section">SALE</a>
+       <a href="#categories-section">CATEGORIES</a>
+       <a data-page="services">SERVICES</a>
+       <a href="search.html">SEARCH</a>
+   </div>
   <div class="nav-right">
     <button data-page="howtobuy">HOW TO BUY</button>
   </div>
 </div>
 
 <section id="main" class="active">
-  <div id="landing-section">
-    <div style="width:25%; height:100%; overflow:hidden;">
-      <img id="landing-img" src="" alt="Featured Product">
+  <section id="landing-column">
+    <div id="landing-section">
+      <div id="landing-img-container">
+        <img id="landing-img" src="" alt="Featured Product">
+      </div>
+      <div id="landing-text">
+        <h1 id="landing-title">NORTHSALEZZ STORE</h1>
+        <p id="landing-description">
+          This is the landing page of my shop/menu for my products. Prices listed here are mostly negotiable so feel free to ask me.
+        </p>
+      </div>
     </div>
-    <div id="landing-right">
-      <div id="landing-title">YYC SALES SHOP</div>
-      <div id="landing-description">This is the landing page of my shop/menu for my products. Prices listed here are mostly negotiable so feel free to ask me.</div>
-    </div>
-  </div>
+  </section>
+
+
 
   <div id="sale-section">
     <h2>Sale</h2>
@@ -343,6 +419,25 @@ window.addEventListener('load', () => {
     }
   }
 });
+
+function adjustLandingFont() {
+  const title = document.getElementById('landing-title');
+  const description = document.getElementById('landing-description');
+  const container = document.getElementById('landing-text');
+
+  [title, description].forEach(el => {
+    let fontSize = parseInt(window.getComputedStyle(el).fontSize);
+    el.style.whiteSpace = 'normal';
+    while (el.scrollWidth > container.clientWidth && fontSize > 10) {
+      fontSize -= 1;
+      el.style.fontSize = fontSize + 'px';
+    }
+  });
+}
+
+window.addEventListener('load', adjustLandingFont);
+window.addEventListener('resize', adjustLandingFont);
+
 </script>
 </body>
 </html>

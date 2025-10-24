@@ -30,7 +30,9 @@
       "Trapstar",
       "Amiri",
       "Apple",
-      "Sp5der"
+      "Sp5der",
+      "Burberry",
+      "Polo Ralph Lauren"
     ]
   },
 
@@ -349,6 +351,81 @@
        "brand": "Sp5der",
        "inStock": true,
        "code": "0026"
-     }   
+     },
+     {
+       "id": "essentials-hoodie",
+       "title": "1:1 Essentials Hoodie BEST QUALITY",
+       "price": "$80 CAD",
+       "description": "1:1 Essentials best quality batch with many colors",
+       "thumbnail": "./Resources/essentials-hoodie.webp",
+       "tags": ["Essentials", "Hoodies & Tracksuits"],
+       "categories": ["Hoodies & Tracksuits"],
+       "brand": "Essentials",
+       "inStock": true,
+       "code": "0027"
+     },
+     {
+       "id": "burberry-zip",
+       "title": "Burberry Zip-Up Hoodie",
+       "price": "$90 CAD",
+       "description": "Very high quality product and high price due to choice of materials and weight",
+       "thumbnail": "./Resources/burberry-zip.webp",
+       "tags": ["Burberry", "Hoodies & Tracksuits"],
+       "categories": ["Hoodies & Tracksuits"],
+       "brand": "Burberry",
+       "inStock": true,
+       "code": "0028"
+     },
+     {
+       "id": "bape-neighbour",
+       "title": "Bape x Neighbouthood Split Camo Shark Zip-Up Hoodie",
+       "price": "$100 CAD",
+       "description": "1:1 Bape x Neighbourhood",
+       "thumbnail": "./Resources/bape-neighbour.webp",
+       "tags": ["Bape", "Hoodies & Tracksuits"],
+       "categories": ["Hoodies & Tracksuits"],
+       "brand": "Bape",
+       "inStock": true,
+       "code": "0029"
+     },
+     {
+       "id": "bape-zip",
+       "title": "1:1 Bape Camo Shark Zip-Up Hoodie BEST QUALITY",
+       "price": "$90 CAD",
+       "description": "1:1 All colorways",
+       "thumbnail": "./Resources/bape-zip.webp",
+       "tags": ["Bape", "Hoodies & Tracksuits"],
+       "categories": ["Hoodies & Tracksuits"],
+       "brand": "Bape",
+       "inStock": true,
+       "code": "0030"
+     },
+     {
+       "id": "rl-track",
+       "title": "Polo Ralph Lauren Tracksuit ALL COLORS",
+       "price_original": "$120 CAD",
+       "price_sale": "$90 CAD",
+       "description": "RL Track all colors best quality",
+       "thumbnail": "./Resources/rl-track.webp",
+       "tags": ["Polo Ralph Lauren", "Hoodies & Tracksuits", "Pants & Bottoms", "Sale"],
+       "categories": ["Hoodies & Tracksuits", "Pants & Bottoms", "Sale"],
+       "brand": "Polo Ralph Lauren",
+       "inStock": true,
+       "code": "0031"
+     }, 
+     {
+       "id": "trapstar-track1",
+       "title": "FEATURED Trapstar Decoded Chenille Hooded Tracksuit Grey/Pink",
+       "price_original": "$160 CAD",
+       "price_sale": "$100 CAD",
+       "description": "Featured Product",
+       "thumbnail": "./Resources/trapstar-track1.webp",
+       "tags": ["Trapstar", "Hoodies & Tracksuits", "Pants & Bottoms", "Sale"],
+       "categories": ["Hoodies & Tracksuits", "Sale", "Pants & Bottoms"],
+       "brand": "Trapstar",
+       "inStock": true,
+       "code": "0032"
+     }
+          
   ]
 }

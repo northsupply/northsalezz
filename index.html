@@ -343,7 +343,10 @@ function showCategory(catName, skipPush=false) {
   const grid = document.getElementById('cat-grid');
   catProducts.forEach(p => grid.appendChild(createProductElement(p)));
   if (!skipPush) history.pushState({section:'category-page', category:catName}, '', '');
+  
+ 
 }
+
 
 // --- Landing Image Cycle ---
 function startLandingImageCycle() {
@@ -439,5 +442,10 @@ window.addEventListener('load', adjustLandingFont);
 window.addEventListener('resize', adjustLandingFont);
 
 </script>
+
+<p style="text-align: center; font-size: 18px;">FEEDBACK</p>
+<div id="ff-compose"></div>
+<script async defer src="https://formfacade.com/include/108140097648721910587/form/1FAIpQLSd9SdPebDEZcnE_zabTOcUQOIkoxrVZc4n1BqNKIXJw05CA7Q/classic.js?div=ff-compose"></script>
+
 </body>
 </html>

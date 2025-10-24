@@ -1,0 +1,60 @@
+{
+  "database": {
+    "categories": [
+      "Jackets",
+      "T-Shirts",
+      "Tech",
+      "Shoes",
+      "Sale",
+      "Hoodies & Tracksuits",
+      "Pants & Bottoms",
+      "Headwear",
+      "Reselling",
+      "Misc"
+    ],
+    "brands": [
+      "Nike",
+      "Moncler",
+      "Canada Goose"
+    ]
+  },
+
+  "products": [
+    {
+      "id": "moncler-jacket",
+      "title": "Moncler Maya Puffer with NFC Scan",
+      "price": "250 CAD",
+      "description": "1:1 Moncler Maya with NFC Scan and real high quality duck down insulation made from authentic duck feathers (hence the price).",
+      "thumbnail": "./Resources/moncler-jacket.webp",
+      "tags": ["Moncler", "Jackets", "Sale", "Reselling"],
+      "categories": ["Jackets", "Sale"],
+      "brand": "Moncler",
+      "inStock": true,
+      "code": "0001"
+    },
+    {
+      "id": "nike-air-force-1",
+      "title": "Nike Air Force 1",
+      "price": "45 CAD",
+      "description": "1:1 Nike AF1 in all colorways",
+      "thumbnail": "./Resources/nike-air-force-1.webp",
+      "tags": ["Nike", "Shoes", "Sale"],
+      "categories": ["Shoes", "Sale"],
+      "brand": "Nike",
+      "inStock": true,
+      "code": "0002"
+    },
+    {
+      "id": "canada-goose-parka",
+      "title": "Canada Goose Chilliwack Parka",
+      "price": "250 CAD",
+      "description": "1:1 Canada Goose Chilliwack with authentic down insulation with arctic fur.",
+      "thumbnail": "./Resources/canada-goose-parka.webp",
+      "tags": ["Canada Goose", "Jackets", "Reselling"],
+      "categories": ["Jackets", "Reselling"],
+      "brand": "Canada Goose",
+      "inStock": true,
+      "code": "0003"
+    }
+  ]
+}

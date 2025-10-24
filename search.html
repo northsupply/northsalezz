@@ -55,7 +55,7 @@ h2 { text-align: center; font-size: 24px; margin: 16px 0; font-weight: bold; lin
 <body>
 <div class="navbar">
   <div class="nav-left">
-    <a href="webpage.html">HOME</a>
+    <a href="index.html">HOME</a>
   </div>
 </div>
 
@@ -127,10 +127,10 @@ function renderSearchResults(query) {
       img.style.height = imgHeight + '%';
     },50);
 
-    // Open product page in main webpage.html
+    // Open product page in main index.html
     el.onclick = () => {
       // Pass product title as query parameter
-      const mainUrl = 'webpage.html';
+      const mainUrl = 'index.html';
       const url = `${mainUrl}?product=${encodeURIComponent(p.title)}`;
       window.location.href = url;
     };

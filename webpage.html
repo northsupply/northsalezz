@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YYC Sales Shop</title>
+
+  <style>
+    @font-face {
+      font-family: 'Dogica';
+      src: url('./Resources/Fonts/dogica.ttf') format('truetype');
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Dogica', sans-serif;
+      background-color: #fff;
+      color: #000;
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background-color: #fff;
+      border-bottom: 1px solid #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      z-index: 10;
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-left a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .nav-right button {
+      background-color: #000;
+      color: #fff;
+      border: 2px solid transparent;
+      padding: 10px 18px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 24px;
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 24px;
+      margin: 16px 0;
+      font-weight: bold;
+    }
+
+    /* Landing Section */
+    #landing-section {
+      display: flex;
+      width: 100%;
+      margin-bottom: 24px;
+      height: 200px;
+      border-bottom: 3px solid #000;
+    }
+
+    #landing-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #landing-right {
+      width: 75%;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #landing-title {
+      height: 25%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    #landing-description {
+      height: 75%;
+      display: flex;
+      align-items:flex-start;
+      padding-top: 8px;
+      font-size: 16px;
+    }
+
+    /* Sale Grid */
+    #sale {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 3px;
+      border-top: 3px solid #000;
+      border-left: 3px solid #000;
+    }
+
+    .product {
+      border-right: 3px solid #000;
+      border-bottom: 3px solid #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      text-align: center;
+      height: 300px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+
+    .product:hover {
+      transform: scale(1.02);
+    }
+
+    .product img {
+      width: 100%;
+      height: 75%;
+      object-fit: cover;
+    }
+
+    .product-info {
+      width: 100%;
+      height: 25%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #fff;
+      border-top: 1px solid #000;
+    }
+
+    .product-info h3, .product-info p {
+      margin: 4px 0;
+    }
+
+    /* Category Buttons */
+    #category-buttons {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .category-btn {
+      padding: 10px;
+      border: 2px solid #000;
+      background-color: #fff;
+      cursor: pointer;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .category-btn:hover {
+      background-color: #f2f2f2;
+    }
+
+    .category-header {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 16px;
+      font-weight: bold;
+    }
+
+    .category-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 3px;
+      border-top: 3px solid #000;
+      border-left: 3px solid #000;
+    }
+
+    /* Product Page */
+    #product-page h1 {
+      text-align: center;
+      font-size: 28px;
+      margin-top: 10px;
+    }
+
+    #product-page h2 {
+      text-align: center;
+      font-size: 24px;
+      margin: 10px 0;
+    }
+
+    #product-page img {
+      display: block;
+      margin: 0 auto;
+      max-width: 90%;
+      height: auto;
+      border: 3px solid #000;
+      border-radius: 6px;
+    }
+
+    #product-code {
+      font-family: Arial, sans-serif;
+      font-size: 40px;
+      font-weight: bold;
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    #how-to-order {
+      text-align: center;
+      font-size: 14px;
+      color: #0000ee;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    #back-btn {
+      display: block;
+      margin: 20px auto;
+      border: 2px solid #000;
+      background-color: #fff;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="nav-left">
+      <a data-page="main">HOME</a>
+      <a href="#sale-section">SALE</a>
+      <a href="#categories-section">CATEGORIES</a>
+      <a data-page="services">SERVICES</a>
+    </div>
+    <div class="nav-right">
+      <button data-page="howtobuy">HOW TO BUY</button>
+    </div>
+  </div>
+
+  <section id="main" class="active">
+    <!-- Landing Section -->
+    <div id="landing-section">
+      <div style="width:25%; height:100%; overflow:hidden;">
+        <img id="landing-img" src="" alt="Featured Product">
+      </div>
+      <div id="landing-right">
+        <div id="landing-title">YYC SALES SHOP</div>
+        <div id="landing-description">This is the landing page of my shop/menu for my products. Prices listed here are mostly negotiable so feel free to ask me.</div>
+      </div>
+    </div>
+
+    <div id="sale-section">
+      <h2>Sale</h2>
+      <div id="sale"></div>
+    </div>
+
+    <div id="categories-section">
+      <h2>Categories</h2>
+      <div id="category-buttons"></div>
+    </div>
+  </section>
+
+  <section id="category-page"></section>
+  <section id="product-page"></section>
+
+  <section id="services">
+    <h2>Services</h2>
+    <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-post="northsalezz/10" data-width="100%" data-color="343638" data-dark-color="FFFFFF"></script>
+  </section>
+
+  <section id="howtobuy">
+    <h2>How to Buy</h2>
+    <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-post="northsalezz/8" data-width="100%"></script>
+    <img src="./Resources/orderscreenshot1.webp" alt="orderscreenshot1.webp" width="1000" height="500">
+  </section>
+
+  <script>
+    let productsData = null;
+
+    async function loadProducts() {
+      const response = await fetch('./products.json');
+      const data = await response.json();
+      productsData = data;
+
+      renderSale(data);
+      renderCategoryButtons(data);
+      startLandingImageCycle();
+    }
+
+    function createProductElement(p) {
+      const el = document.createElement('div');
+      el.className = 'product';
+      el.innerHTML = `
+        <img src="${p.thumbnail || './Resources/default.webp'}" alt="${p.title}">
+        <div class="product-info">
+          <h3>${p.title}</h3>
+          <p>$${p.price}</p>
+        </div>`;
+      el.onclick = () => showProduct(p.title);
+      return el;
+    }
+
+    function renderSale(data) {
+      const saleGrid = document.getElementById('sale');
+      const saleProducts = data.products.filter(p =>
+        p.tags.map(t => t.toLowerCase()).includes('sale')
+      );
+
+      if (saleProducts.length === 0) {
+        document.getElementById('sale-section').style.display = 'none';
+        return;
+      }
+
+      saleProducts.forEach(p => saleGrid.appendChild(createProductElement(p)));
+    }
+
+    function renderCategoryButtons(data) {
+      const container = document.getElementById('category-buttons');
+      container.innerHTML = '';
+      data.database.categories.forEach(cat => {
+        const btn = document.createElement('div');
+        btn.className = 'category-btn';
+        btn.textContent = cat;
+        btn.onclick = () => showCategory(cat);
+        container.appendChild(btn);
+      });
+    }
+
+    // --- History-enabled navigation ---
+    function showSection(sectionId, scrollToId = null, skipPush = false) {
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      const section = document.getElementById(sectionId);
+      if (!section) return;
+      section.classList.add('active');
+
+      if (scrollToId) {
+        const el = document.getElementById(scrollToId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      if (!skipPush) {
+        history.pushState({ section: sectionId, scrollTo: scrollToId }, '', '');
+      }
+    }
+
+    window.addEventListener('popstate', e => {
+      if (e.state) {
+        if (e.state.section === 'product-page' && e.state.productTitle) {
+          showProduct(e.state.productTitle, true);
+        } else if (e.state.section === 'category-page' && e.state.category) {
+          showCategory(e.state.category, true);
+        } else {
+          showSection(e.state.section, e.state.scrollTo, true);
+        }
+      } else {
+        showSection('main', null, true);
+      }
+    });
+
+    document.querySelectorAll('[data-page]').forEach(link => {
+      link.addEventListener('click', e => {
+        const page = e.target.getAttribute('data-page');
+        showSection(page);
+      });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        if (!document.getElementById('main').classList.contains('active')) {
+          showSection('main', targetId);
+        } else {
+          const targetEl = document.getElementById(targetId);
+          if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+          history.pushState({ section: 'main', scrollTo: targetId }, '', '');
+        }
+      });
+    });
+
+    // Product page
+    function showProduct(title, skipPush=false) {
+      const product = productsData.products.find(p => p.title === title);
+      if (!product) return;
+
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      const productPage = document.getElementById('product-page');
+      productPage.classList.add('active');
+
+      productPage.innerHTML = `
+        <button id="back-btn">← Back</button>
+        <h1>${product.title}</h1>
+        <h2>$${product.price}</h2>
+        <div id="product-code">Product Code: ${product.code}</div>
+        <div id="how-to-order" onclick="showSection('howtobuy')">How to order?</div>
+        <img src="${product.thumbnail || './Resources/default.webp'}" alt="${product.title}">
+      `;
+
+      document.getElementById('back-btn').addEventListener('click', () => history.back());
+
+      if (!skipPush) history.pushState({ section: 'product-page', productTitle: title }, '', '');
+    }
+
+    // Category page
+    function showCategory(catName, skipPush=false) {
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      const catPage = document.getElementById('category-page');
+      catPage.classList.add('active');
+
+      const catProducts = productsData.products.filter(p =>
+        p.categories.map(c => c.toLowerCase()).includes(catName.toLowerCase())
+      );
+
+      catPage.innerHTML = `
+        <div class="category-header">${catName}</div>
+        <div class="category-grid" id="cat-grid"></div>`;
+
+      const grid = document.getElementById('cat-grid');
+      catProducts.forEach(p => grid.appendChild(createProductElement(p)));
+
+      if (!skipPush) history.pushState({ section: 'category-page', category: catName }, '', '');
+    }
+
+    function startLandingImageCycle() {
+      if (!productsData) return;
+      const landingImg = document.getElementById('landing-img');
+      const thumbnails = productsData.products
+        .filter(p => p.thumbnail)
+        .map(p => p.thumbnail);
+      if (thumbnails.length === 0) return;
+
+      landingImg.src = thumbnails[0];
+
+      setInterval(() => {
+        const index = Math.floor(Math.random() * thumbnails.length);
+        landingImg.src = thumbnails[index];
+      }, 5000);
+    }
+
+    window.addEventListener('load', () => {
+      if (!history.state) showSection('main', null, true);
+    });
+
+    loadProducts();
+  </script>
+</body>
+</html>

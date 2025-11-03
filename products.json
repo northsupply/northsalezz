@@ -1,6 +1,7 @@
 {
   "database": {
     "categories": [
+      "FEATURED",
       "Jackets",
       "Shirts",
       "Tech",
@@ -32,7 +33,9 @@
       "Apple",
       "Sp5der",
       "Burberry",
-      "Polo Ralph Lauren"
+      "Polo Ralph Lauren",
+      "Ksubi",
+      "Purple Brand"
     ]
   },
 
@@ -420,12 +423,73 @@
        "price_sale": "$100 CAD",
        "description": "Featured Product",
        "thumbnail": "./Resources/trapstar-track1.webp",
-       "tags": ["Trapstar", "Hoodies & Tracksuits", "Pants & Bottoms", "Sale"],
-       "categories": ["Hoodies & Tracksuits", "Sale", "Pants & Bottoms"],
+       "tags": ["Trapstar", "Hoodies & Tracksuits", "Pants & Bottoms", "Sale", "FEATURED"],
+       "categories": ["Hoodies & Tracksuits", "Sale", "Pants & Bottoms", "FEATURED"],
        "brand": "Trapstar",
        "inStock": true,
        "code": "0032"
-     }
-          
+     },
+     {
+       "id": "ksubi-black",
+       "title": "FEATURED Ksubi Jeans",
+       "price": "$90 CAD",
+       "description": "Featured Product, Ksubi Jeans",
+       "thumbnail": "./Resources/ksubi-black.webp",
+       "tags": ["Ksubi", "Pants & Bottoms", "FEATURED"],
+       "categories": ["Pants & Bottoms", "FEATURED"],
+       "brand": "Ksubi",
+       "inStock": true,
+       "code": "0033"  
+     },
+     {
+       "id": "amiri-mx1black",
+       "title": "FEATURED Amiri MX1 1:1 BEST QUALITY",
+       "price": "$105 CAD",
+       "description": "Featured Product, Brand new drop Amiri MX1 1:1 Jeans",
+       "thumbnail": "./Resources/amiri-mx1black.webp",
+       "tags": ["Amiri", "Pants & Bottoms", "FEATURED"],
+       "categories": ["Pants & Bottoms", "FEATURED"],
+       "brand": "Amiri",
+       "inStock": true,
+       "code": "0034"  
+     },
+     {
+       "id": "amiri-mx1white",
+       "title": "FEATURED Amiri MX1 1:1 BEST QUALITY",
+       "price": "$105 CAD",
+       "description": "Featured Product, Brand new drop Amiri MX1 1:1 Jeans",
+       "thumbnail": "./Resources/amiri-mx1white.webp",
+       "tags": ["Amiri", "Pants & Bottoms", "FEATURED"],
+       "categories": ["Pants & Bottoms", "FEATURED"],
+       "brand": "Amiri",
+       "inStock": true,
+       "code": "0034"
+     },
+     {
+       "id": "purple-jeans",
+       "title": "FEATURED Purple Brand Jeans 1:1 BEST QUALITY",
+       "price": "$90 CAD",
+       "description": "Featured Product, Brand new drop Purple Brand 1:1 Jeans",
+       "thumbnail": "./Resources/purple-jeans-black.webp",
+       "tags": ["Purple Brand", "Pants & Bottoms", "FEATURED"],
+       "categories": ["Pants & Bottoms", "FEATURED"],
+       "brand": "Purple Brand",
+       "inStock": true,
+       "code": "0035"  
+     },
+     {
+       "id": "purple-jeans",
+       "title": "FEATURED Purple Brand Jeans 1:1 BEST QUALITY",
+       "price": "$90 CAD",
+       "description": "Featured Product, Brand new drop Purple Brand 1:1 Jeans",
+       "thumbnail": "./Resources/purple-jeans-blue.webp",
+       "tags": ["Purple Brand", "Pants & Bottoms", "FEATURED"],
+       "categories": ["Pants & Bottoms", "FEATURED"],
+       "brand": "Purple Brand",
+       "inStock": true,
+       "code": "0035"
+     }     
+  
   ]
+
 }
